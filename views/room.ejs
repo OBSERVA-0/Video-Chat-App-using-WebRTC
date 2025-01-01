@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,5 +27,79 @@
 </head>
 <body>
   <div id="video-grid"></div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script>
+    const ROOM_ID = "<%= roomId %>";
+  </script>
+  <script defer src="https://unpkg.com/peerjs@1.2.0/dist/peerjs.min.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <title>Zoom Clone - Video Room</title>
+  <style>
+    body {
+      height: 100vh;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #a8edea, #fed6e3); 
+      color: #333;
+    }
+
+    header {
+      background-color: #3d7bad; 
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+
+    #video-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.8); 
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+      overflow-y: auto;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+      object-fit: cover;
+      border: 2px solid #13c0d3; 
+    }
+
+    footer {
+      background-color: #ff6f61;
+      color: white;
+      text-align: center;
+      font-size: 14px;
+      padding: 10px;
+      box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); 
+    }
+  </style>
+</head>
+<body>
+  <header>Welcome to Zoom Clone - Video Room</header>
+  <div id="video-grid"></div>
+  <footer>Developed with ❤️ | Relax, Connect, Communicate</footer>
 </body>
 </html>
